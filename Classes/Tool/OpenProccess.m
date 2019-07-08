@@ -22,12 +22,15 @@
 -(ProccessResult*)doWorkWithfilePath:(NSString*)filePath{
     NSString *content=[NSString stringWithFormat:@"%@%@",FASTLANE_ENV,
                        @"FILETPATH=$1;\
-                       open \"${FILETPATH}\""];
+                       open \"${FILETPATH}\" &"];
     content=[content stringByReplacingOccurrencesOfString:@"$1" withString:filePath];
-    NSString*result=[self doWork:content];
+    NSString*result=[self doWorkOnType:SProccessTypeShell WithContent:content];
     ProccessResult*pResult= [self.resultHandler handleResultFromOrinalResult:result];
-    if (pResult.resultReason!=SResultReason_AllSuccess) {
+    if (pResult.resultReason!=SResultReason_AllSuccess&&pResult.resultReason!=SResultReason_Empty) {
         return pResult;
+    }
+    if (pResult.resultReason==SResultReason_Empty) {
+        pResult.isRunSucceed=true;
     }
     return pResult;
 }

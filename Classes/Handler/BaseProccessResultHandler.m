@@ -23,15 +23,15 @@
     
     //结果是否为空
     if ([NSString isNull:oriResult]) {
-        [result setIsRunSucceed:false];
-        [result setResultReason:SResultReason_Unknown];
+        [result setIsRunSucceed:true];
+        [result setResultReason:SResultReason_Empty];
         [result setResult:NO_RESULT];
     }
     //结果是否包含明显的失败信息
     if ([oriResult containsString:@"fail"]||[oriResult containsString:@"error"]) {
         [result setIsRunSucceed:false];
         [result setResultReason:SResultReason_Unknown];
-        [result setResult:NO_RESULT];
+        [result setResult:FAIL_RESULT];
     }
     return result;
 }

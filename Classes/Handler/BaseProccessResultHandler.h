@@ -15,6 +15,7 @@
 //#import "SNSStringTool.h"
 
 #define NO_RESULT @"No Result After Proccess Run!"
+#define FAIL_RESULT @"Fail After Proccess Run!"
 #define ALL_SUCCESS @"Success After Proccess Run!"
 
 NS_ASSUME_NONNULL_BEGIN
