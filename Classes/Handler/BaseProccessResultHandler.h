@@ -11,7 +11,8 @@
 //#import "../Model/ProccessResult.h"
 //#import "../../../Classes/Data/SNSStringTool.h"
 #import "ProccessResult.h"
-#import "SNSStringTool.h"
+#import <SDataTools/SDataTools.h>
+//#import "SNSStringTool.h"
 
 #define NO_RESULT @"No Result After Proccess Run!"
 #define ALL_SUCCESS @"Success After Proccess Run!"

@@ -70,8 +70,6 @@
 		185A3B6C22D2EB6300E8C60C /* BaseProccessResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A3B2B22D2EB6200E8C60C /* BaseProccessResult.m */; };
 		185A3B6D22D2EB6300E8C60C /* ProccessResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A3B2C22D2EB6200E8C60C /* ProccessResult.m */; };
 		185A3B6E22D2EB6300E8C60C /* SResultEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 185A3B2D22D2EB6200E8C60C /* SResultEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		185A3B6F22D2EB6300E8C60C /* NSTask+TRTaskAdditions_termination.h in Headers */ = {isa = PBXBuildFile; fileRef = 185A3B2E22D2EB6300E8C60C /* NSTask+TRTaskAdditions_termination.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		185A3B7022D2EB6300E8C60C /* NSTask+TRTaskAdditions_termination.mm in Sources */ = {isa = PBXBuildFile; fileRef = 185A3B2F22D2EB6300E8C60C /* NSTask+TRTaskAdditions_termination.mm */; };
 		A61F84E66696EC07A9B2F69C /* Pods_SProccessTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199563A51BBB7FB872C9B363 /* Pods_SProccessTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,8 +139,6 @@
 		185A3B2B22D2EB6200E8C60C /* BaseProccessResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseProccessResult.m; sourceTree = "<group>"; };
 		185A3B2C22D2EB6200E8C60C /* ProccessResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProccessResult.m; sourceTree = "<group>"; };
 		185A3B2D22D2EB6200E8C60C /* SResultEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SResultEnums.h; sourceTree = "<group>"; };
-		185A3B2E22D2EB6300E8C60C /* NSTask+TRTaskAdditions_termination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+TRTaskAdditions_termination.h"; sourceTree = "<group>"; };
-		185A3B2F22D2EB6300E8C60C /* NSTask+TRTaskAdditions_termination.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSTask+TRTaskAdditions_termination.mm"; sourceTree = "<group>"; };
 		199563A51BBB7FB872C9B363 /* Pods_SProccessTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SProccessTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		549267A660B407BCD76DE63F /* Pods-SProccessTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SProccessTool.release.xcconfig"; path = "Target Support Files/Pods-SProccessTool/Pods-SProccessTool.release.xcconfig"; sourceTree = "<group>"; };
 		793841015978A84DF8E1E770 /* Pods-SProccessTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SProccessTool.debug.xcconfig"; path = "Target Support Files/Pods-SProccessTool/Pods-SProccessTool.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,8 +180,6 @@
 				185A3B2522D2EB6200E8C60C /* Bean */,
 				185A3AEC22D2EB6200E8C60C /* Handler */,
 				185A3B2822D2EB6200E8C60C /* Model */,
-				185A3B2E22D2EB6300E8C60C /* NSTask+TRTaskAdditions_termination.h */,
-				185A3B2F22D2EB6300E8C60C /* NSTask+TRTaskAdditions_termination.mm */,
 				185A3B0422D2EB6200E8C60C /* Tool */,
 				185A3AE322D2EB0E00E8C60C /* SProccessTool.h */,
 				185A3AE422D2EB0E00E8C60C /* Info.plist */,
@@ -312,7 +306,6 @@
 				185A3B3422D2EB6300E8C60C /* ProccessResultHandlers.h in Headers */,
 				185A3B5D22D2EB6300E8C60C /* ExpectProccessTool.h in Headers */,
 				185A3B5622D2EB6300E8C60C /* BaseProccessTool.h in Headers */,
-				185A3B6F22D2EB6300E8C60C /* NSTask+TRTaskAdditions_termination.h in Headers */,
 				185A3B6122D2EB6300E8C60C /* SFileCopyProccess.h in Headers */,
 				185A3B6A22D2EB6300E8C60C /* BaseProccessResult.h in Headers */,
 				185A3B6422D2EB6300E8C60C /* FastlaneProccessTool.h in Headers */,
@@ -457,7 +450,6 @@
 				185A3B4122D2EB6300E8C60C /* UpdateProfileProccessResultHandler.m in Sources */,
 				185A3B6922D2EB6300E8C60C /* SOSSDataBean.m in Sources */,
 				185A3B5822D2EB6300E8C60C /* ResignAppProccessTool.m in Sources */,
-				185A3B7022D2EB6300E8C60C /* NSTask+TRTaskAdditions_termination.mm in Sources */,
 				185A3B4922D2EB6300E8C60C /* ExpectProccessTool.m in Sources */,
 				185A3B5F22D2EB6300E8C60C /* CacheLocalDeviceProccessTool.m in Sources */,
 				185A3B3E22D2EB6300E8C60C /* CopyThroughOSSProccessResultHandler.m in Sources */,
