@@ -1,0 +1,6 @@
+framework module Pods_SProccessTool {
+  umbrella header "Pods-SProccessTool-umbrella.h"
+
+  export *
+  module * { export * }
+}
