@@ -28,7 +28,8 @@
         [result setResult:NO_RESULT];
     }
     //结果是否包含明显的失败信息
-    if ([oriResult containsString:@"fail"]||[oriResult containsString:@"error"]) {
+//    if ([oriResult containsString:@"fail"]||[oriResult containsString:@"error"]) {
+    if (([oriResult containsString:@"fail"]||[oriResult containsString:@"error"])&&![oriResult containsString:@"success"]&&![oriResult containsString:@"Success"]) {
         [result setIsRunSucceed:false];
         [result setResultReason:SResultReason_Unknown];
         [result setResult:FAIL_RESULT];
