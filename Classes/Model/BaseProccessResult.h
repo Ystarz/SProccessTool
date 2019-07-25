@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(assign,nonatomic) bool isRunSucceed;
 @property(assign,nonatomic) int resultReason;
 @property (strong,nonatomic) NSString*result;
+@property (strong,nonatomic) NSObject*resultData;
 @end
 
 NS_ASSUME_NONNULL_END
