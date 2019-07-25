@@ -10,7 +10,6 @@
 #define ResultEnums_h
 typedef enum
 {
-    
     SResultReason_AllSuccess=0,
     SResultReason_Unknown,//未知错误
     SResultReason_Empty,//结果为空,默认归为正确吧?

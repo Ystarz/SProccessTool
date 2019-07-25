@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RubyProccessTool : BaseProccessTool
--(void)doWork:(NSString*)content;
+-(NSString*)doWork:(NSString*)content;
+-(ProccessResult*)doWork2:(NSString*)content;
 @end
 
 NS_ASSUME_NONNULL_END

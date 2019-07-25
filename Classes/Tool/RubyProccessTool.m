@@ -9,7 +9,20 @@
 #import "RubyProccessTool.h"
 
 @implementation RubyProccessTool
--(void)doWork:(NSString*)content{
-    [super doWorkOnType:SProccessTypeRuby WithContent:content];
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.resultHandler=[BaseProccessResultHandler new];
+    }
+    return self;
+}
+-(NSString*)doWork:(NSString*)content{
+   return [super doWorkOnType:SProccessTypeRuby WithContent:content];
+}
+
+-(ProccessResult*)doWork2:(NSString*)content{
+    NSString*result= [self doWork:content];
+   return [self.resultHandler handleResultFromOrinalResult:result];
 }
 @end

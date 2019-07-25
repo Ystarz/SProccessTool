@@ -269,8 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				185A3B2922D2EB6200E8C60C /* BaseProccessResult.h */,
-				185A3B2A22D2EB6200E8C60C /* ProccessResult.h */,
 				185A3B2B22D2EB6200E8C60C /* BaseProccessResult.m */,
+				185A3B2A22D2EB6200E8C60C /* ProccessResult.h */,
 				185A3B2C22D2EB6200E8C60C /* ProccessResult.m */,
 				185A3B2D22D2EB6200E8C60C /* SResultEnums.h */,
 			);
