@@ -29,7 +29,9 @@
             launchPath=@"/bin/bash";
             break;
         case SProccessTypeRuby:
-            launchPath=@"/usr/bin/ruby";
+            launchPath=@"/bin/bash";
+            content=[NSString stringWithFormat:@"/usr/bin/ruby %@",content];
+            ;
             break;
         case SProccessTypeExpect:
             launchPath=@"/usr/bin/expect";
