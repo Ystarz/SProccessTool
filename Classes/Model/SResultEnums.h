@@ -30,15 +30,5 @@ typedef enum
     SResultFastlaneReason_FailToLogin,//登陆苹果账号超时,通常是503
 } SResultFastlaneReason;
 
-typedef enum
-{
-    
-    SResultFileReason_AllSuccess=0,
-    SResultFileReason_NoAccessPermition,
-//    SResultFileReason_FailToCreateFile,
-//    SResultFileReason_FailToWriteIn,
-//    SResultFileReason_FailToReadOut,
-    SResultFileReason_ErrorParas,
-    SResultFileReason_Unknown,//未知错误
-} SResultFileReason;
+
 #endif /* ResultEnums_h */

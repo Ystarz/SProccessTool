@@ -1,18 +1,15 @@
 //
 //  ProccessResultHandlers.h
-//  SDataTools
+//  SProccessTool
 //
-//  Created by SSS on 2019/6/30.
+//  Created by SSS on 2019/7/30.
 //  Copyright © 2019 SSS. All rights reserved.
 //
 
 #ifndef ProccessResultHandlers_h
 #define ProccessResultHandlers_h
+#import "BaseProccessResultHandler.h"
+#import "FastlaneProccessResultHandler.h"
+#import "ShellProccessResultHandler.h"
 
-#import "CreateAppIdProccessResultHandler.h"
-#import "CacheLocalDeviceProccessResultHandler.h"
-#import "UploadLocalDeviceProccessResultHandler.h"
-#import "UpdateProfileProccessResultHandler.h"
-#import "ResignAppProccessResultHandler.h"
-#import "CopyThroughOSSProccessResultHandler.h"
 #endif /* ProccessResultHandlers_h */

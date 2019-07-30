@@ -29,7 +29,7 @@
     }
     //结果是否包含明显的失败信息
 //    if ([oriResult containsString:@"fail"]||[oriResult containsString:@"error"]) {
-    if (([oriResult containsString:@"fail"]||[oriResult containsString:@"error"])&&![oriResult containsString:@"success"]&&![oriResult containsString:@"Success"]) {
+    if ((([oriResult containsString:@"fail"]&&![oriResult containsString:@"nw_path_close_fd Failed to close"])||[oriResult containsString:@"error"])&&![oriResult containsString:@"success"]&&![oriResult containsString:@"Success"]) {
         [result setIsRunSucceed:false];
         [result setResultReason:SResultReason_Unknown];
         [result setResult:FAIL_RESULT];

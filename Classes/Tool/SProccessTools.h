@@ -12,14 +12,6 @@
 //Shell
 #import "ShellProccessTool.h"
 #import "FastlaneProccessTool.h"
-#import "CreateAppIdProccessTool.h"
-#import "CacheLocalDeviceProccessTool.h"
-#import "UploadLocalDeviceProccessTool.h"
-#import "UpdateProfileProccessTool.h"
-#import "ResignAppProccessTool.h"
-#import "CopyThroughOSSProccessTool.h"
-#import "CertProccessTool.h"
-#import "OpenProccess.h"
 
 //Ruby
 #import "RubyProccessTool.h"

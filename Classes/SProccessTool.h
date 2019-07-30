@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 //Bean
-#import "SOSSDataBean.h"
+//#import "SOSSDataBean.h"
 
 //Tool
 #import "SProccessTools.h"

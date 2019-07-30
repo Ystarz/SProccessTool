@@ -15,7 +15,7 @@
 {
     self = [super init];
     if (self) {
-        self.task_timeout=20;
+        self.task_timeout=60;
     }
     return self;
 }
@@ -24,16 +24,25 @@
     // 初始化并设置shell路径
     NSTask *task = [[NSTask alloc] init];
     NSString*launchPath=@"/bin/bash";
+    // -c 用来执行string-commands（命令字符串），也就说不管后面的字符串里是什么都会被当做shellcode来执行
+    NSArray *arguments = [NSArray arrayWithObjects: @"-c", content, nil];
     switch (type) {
-        case SProccessTypeShell:
+            case SProccessTypeShell:
             launchPath=@"/bin/bash";
             break;
-        case SProccessTypeRuby:
+            case SProccessTypeShellDirect:
+            launchPath=@"/bin/bash";
+            arguments= [content componentsSeparatedByString:@" "];
+            //arguments= [NSArray arrayWithObjects: content, nil];
+            break;
+            case SProccessTypeRuby:
             launchPath=@"/bin/bash";
             content=[NSString stringWithFormat:@"/usr/bin/ruby %@",content];
-            ;
+            arguments = [NSArray arrayWithObjects: @"-c", content, nil];
+            //arguments= [content componentsSeparatedByString:@" "];
+            //arguments=@[@"-c",arguments];
             break;
-        case SProccessTypeExpect:
+            case SProccessTypeExpect:
             launchPath=@"/usr/bin/expect";
             break;
         default:
@@ -41,8 +50,6 @@
             break;
     }
     [task setLaunchPath: launchPath];
-    // -c 用来执行string-commands（命令字符串），也就说不管后面的字符串里是什么都会被当做shellcode来执行
-    NSArray *arguments = [NSArray arrayWithObjects: @"-c", content, nil];
     [task setArguments: arguments];
     
     // 新建输出管道作为Task的输出
@@ -64,5 +71,27 @@
     
     
     return result;
+}
+-(ProccessResult*) doHandleCommonFanstlan:(NSString *) content{
+    return nil;
+}
+
+-(ProccessResult*) doHandleCommonShell:(NSString *) content{
+    return nil;
+}
+
+
+-(ProccessResult*) doHandleResult: (NSString *) content handle :(SpecialHandle) handle{
+    //处理通用的resulr
+    ProccessResult* res =  [self doHandleCommonShell:content];
+    if(!res.isRunSucceed ){
+        return res;
+    }
+    res =  [self doHandleCommonFanstlan:content];
+    if(!res.isRunSucceed ){
+        return res;
+    }
+    //执行派生类的handle()
+    return handle(content);
 }
 @end
