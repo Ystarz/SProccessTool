@@ -8,9 +8,16 @@
 
 #import "FastlaneProccessResultHandler.h"
 
+#define CON_NO_APPLEID @"Optional: Your Apple ID:"
+#define CON_NO_PARA @"To not be asked about this value"
+
+
 #define FAST_NEED_UPDATE @"fastlane need to update"
 #define SERVER_503 @"fastlane need to update"
 #define INVALID_BYTE @"invalid byte sequence in US-ASCII"
+#define NO_APPLEID @"no apple id for fastlane"
+#define NO_PARA @"no enough para for fastlane"
+
 @implementation FastlaneProccessResultHandler
 
 -(ProccessResult*)handleResultFromOrinalResult:(NSString*)oriResult{
@@ -26,23 +33,33 @@
         [result setResult:FAST_NEED_UPDATE];
     }
     //结果包含明显的成功信息
-   else if ([oriResult containsString:@"fastlane.tools finished successfully"]) {
+    else if ([oriResult containsString:@"fastlane.tools finished successfully"]) {
         [result setIsRunSucceed:true];
         [result setResultReason:SResultFastlaneReason_AllSuccess];
         [result setResult:ALL_SUCCESS];
     }
     
     //尽量只判断失败的情况,未发现异常关键字即成功
-   if ([oriResult containsString:@"503 Service Temporarily Unavailable"]) {
-       [result setIsRunSucceed:FALSE];
-       [result setResultReason:SResultFastlaneReason_FailToLogin];
-       [result setResult:SERVER_503];
-   }
-   else if ([oriResult containsString:@"invalid byte sequence in US-ASCII"]) {
-       [result setIsRunSucceed:FALSE];
-       [result setResultReason:SResultFastlaneReason_Unknown];
-       [result setResult:INVALID_BYTE];
-   }
+    if ([oriResult containsString:@"503 Service Temporarily Unavailable"]) {
+        [result setIsRunSucceed:FALSE];
+        [result setResultReason:SResultFastlaneReason_FailToLogin];
+        [result setResult:SERVER_503];
+    }
+    else if ([oriResult containsString:@"invalid byte sequence in US-ASCII"]) {
+        [result setIsRunSucceed:FALSE];
+        [result setResultReason:SResultFastlaneReason_Unknown];
+        [result setResult:INVALID_BYTE];
+    }
+    else if ([oriResult containsString:CON_NO_APPLEID]) {
+        result.result=NO_APPLEID;
+        [result setResultReason:SResultFastlaneReason_Unknown];
+        result.isRunSucceed=false;
+    }
+    else if ([oriResult containsString:CON_NO_PARA]) {
+        result.result=NO_PARA;
+        [result setResultReason:SResultFastlaneReason_Unknown];
+        result.isRunSucceed=false;
+    }
     return result;
 }
 @end
