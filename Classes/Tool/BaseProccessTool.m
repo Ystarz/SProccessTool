@@ -15,6 +15,7 @@
 {
     self = [super init];
     if (self) {
+        self.resultHandler=[BaseProccessResultHandler new];
         self.task_timeout=60;
     }
     return self;

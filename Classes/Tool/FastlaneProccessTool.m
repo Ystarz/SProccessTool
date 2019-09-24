@@ -7,8 +7,18 @@
 //
 
 #import "FastlaneProccessTool.h"
+#import "FastlaneProccessResultHandler.h"
 
 @implementation FastlaneProccessTool
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.resultHandler=[BaseProccessResultHandler new];
+    }
+    return self;
+}
+
 -(NSString*)doWork:(NSString*)content{
     return [super doWork:content];
 }

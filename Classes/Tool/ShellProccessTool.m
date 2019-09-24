@@ -7,8 +7,17 @@
 //
 
 #import "ShellProccessTool.h"
+#import "ShellProccessResultHandler.h"
 
 @implementation ShellProccessTool
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.resultHandler=[ShellProccessResultHandler new];
+    }
+    return self;
+}
 -(NSString*)doWork:(NSString*)content{
    return [super doWorkOnType:SProccessTypeShell WithContent:content];
 }
