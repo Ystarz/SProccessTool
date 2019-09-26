@@ -33,6 +33,8 @@
 		185A3B6C22D2EB6300E8C60C /* BaseProccessResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A3B2B22D2EB6200E8C60C /* BaseProccessResult.m */; };
 		185A3B6D22D2EB6300E8C60C /* ProccessResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 185A3B2C22D2EB6200E8C60C /* ProccessResult.m */; };
 		185A3B6E22D2EB6300E8C60C /* SResultEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 185A3B2D22D2EB6200E8C60C /* SResultEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18D83FDB233CCA7A00253D61 /* UpdateFastlaneProccessTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 18D83FD9233CCA7A00253D61 /* UpdateFastlaneProccessTool.h */; };
+		18D83FDC233CCA7A00253D61 /* UpdateFastlaneProccessTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D83FDA233CCA7A00253D61 /* UpdateFastlaneProccessTool.m */; };
 		A61F84E66696EC07A9B2F69C /* Pods_SProccessTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199563A51BBB7FB872C9B363 /* Pods_SProccessTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		185A3B2B22D2EB6200E8C60C /* BaseProccessResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseProccessResult.m; sourceTree = "<group>"; };
 		185A3B2C22D2EB6200E8C60C /* ProccessResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProccessResult.m; sourceTree = "<group>"; };
 		185A3B2D22D2EB6200E8C60C /* SResultEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SResultEnums.h; sourceTree = "<group>"; };
+		18D83FD9233CCA7A00253D61 /* UpdateFastlaneProccessTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateFastlaneProccessTool.h; sourceTree = "<group>"; };
+		18D83FDA233CCA7A00253D61 /* UpdateFastlaneProccessTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateFastlaneProccessTool.m; sourceTree = "<group>"; };
 		18F4812122F07194000C6668 /* ProccessResultHandlers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProccessResultHandlers.h; sourceTree = "<group>"; };
 		199563A51BBB7FB872C9B363 /* Pods_SProccessTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SProccessTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		549267A660B407BCD76DE63F /* Pods-SProccessTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SProccessTool.release.xcconfig"; path = "Target Support Files/Pods-SProccessTool/Pods-SProccessTool.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				185A3B1B22D2EB6200E8C60C /* SOCProccess.h */,
 				185A3B0522D2EB6200E8C60C /* SOCProccess.m */,
 				185A3B1622D2EB6200E8C60C /* SProccessTools.h */,
+				18D83FD9233CCA7A00253D61 /* UpdateFastlaneProccessTool.h */,
+				18D83FDA233CCA7A00253D61 /* UpdateFastlaneProccessTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -195,6 +201,7 @@
 				185A3B6722D2EB6300E8C60C /* RubyProccessTool.h in Headers */,
 				185A3B5D22D2EB6300E8C60C /* ExpectProccessTool.h in Headers */,
 				185A3B5622D2EB6300E8C60C /* BaseProccessTool.h in Headers */,
+				18D83FDB233CCA7A00253D61 /* UpdateFastlaneProccessTool.h in Headers */,
 				185A3B6A22D2EB6300E8C60C /* BaseProccessResult.h in Headers */,
 				185A3B6422D2EB6300E8C60C /* FastlaneProccessTool.h in Headers */,
 				185A3B6B22D2EB6300E8C60C /* ProccessResult.h in Headers */,
@@ -311,6 +318,7 @@
 				185A3B4822D2EB6300E8C60C /* SOCProccess.m in Sources */,
 				185A3B6D22D2EB6300E8C60C /* ProccessResult.m in Sources */,
 				185A3B6622D2EB6300E8C60C /* BaseProccessTool.m in Sources */,
+				18D83FDC233CCA7A00253D61 /* UpdateFastlaneProccessTool.m in Sources */,
 				185A3B4922D2EB6300E8C60C /* ExpectProccessTool.m in Sources */,
 				185A3B6022D2EB6300E8C60C /* ShellProccessTool.m in Sources */,
 				185A3B3A22D2EB6300E8C60C /* BaseProccessResultHandler.m in Sources */,

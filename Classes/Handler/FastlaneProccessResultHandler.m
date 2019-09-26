@@ -7,6 +7,7 @@
 //
 
 #import "FastlaneProccessResultHandler.h"
+#import "UpdateFastlaneProccessTool.h"
 
 #define CON_NO_APPLEID @"Optional: Your Apple ID:"
 #define CON_NO_PARA @"To not be asked about this value"
@@ -31,6 +32,10 @@
         [result setIsRunSucceed:true];
         [result setResultReason:SResultFastlaneReason_NeedUpdate];
         [result setResult:FAST_NEED_UPDATE];
+        QUEUE_ASYNC_LOW(
+                        //异步
+                        [[[UpdateFastlaneProccessTool alloc]init] doWork];
+        );
     }
     //结果包含明显的成功信息
     else if ([oriResult containsString:@"fastlane.tools finished successfully"]) {
