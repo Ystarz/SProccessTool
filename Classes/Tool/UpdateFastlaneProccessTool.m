@@ -49,8 +49,9 @@
     NSString *content=[NSString stringWithFormat:@"%@",
                        @"sudo gem install fastlane"];
 //    OCLOGD(@"%@",content);
+    NSLog(@"UpdateFastlaneProccessTool::content::%@",content);
     NSString*result= [self doWork:content];
-    NSLog(@"%@",result);
+    NSLog(@"UpdateFastlaneProccessTool::%@",result);
     return [self.resultHandler handleResultFromOrinalResult:result];
 }
 @end

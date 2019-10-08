@@ -11,13 +11,17 @@
 
 #define CON_NO_APPLEID @"Optional: Your Apple ID:"
 #define CON_NO_PARA @"To not be asked about this value"
+#define CON_INVALID_BTYE @"invalid byte sequence in US-ASCII"
+#define CON_NEED_UPDATE @"You should use the latest version"
+#define CON_NEED_UPDATE_1 @"sudo gem install fastlane"
+#define CON_SERVER_503 @"503 Service Temporarily Unavailable"
+#define CON_FASTLANE_SUCCESS @"fastlane.tools finished successfully"
 
-
-#define FAST_NEED_UPDATE @"fastlane need to update"
-#define SERVER_503 @"fastlane need to update"
-#define INVALID_BYTE @"invalid byte sequence in US-ASCII"
-#define NO_APPLEID @"no apple id for fastlane"
-#define NO_PARA @"no enough para for fastlane"
+#define RES_FAST_NEED_UPDATE @"fastlane need to update"
+#define RES_INVALID_BTYE @"invalid byte sequence in US-ASCII"
+#define RES_NO_APPLEID @"no apple id for fastlane"
+#define RES_NO_PARA @"no enough para for fastlane"
+#define RES_SERVER_503 @"server 503"
 
 @implementation FastlaneProccessResultHandler
 
@@ -28,40 +32,40 @@
         return result;
     }
     
-    if ([oriResult containsString:@"You should use the latest version"]) {
+    if ([oriResult containsString:CON_NEED_UPDATE]||[oriResult containsString:CON_NEED_UPDATE_1]) {
         [result setIsRunSucceed:true];
         [result setResultReason:SResultFastlaneReason_NeedUpdate];
-        [result setResult:FAST_NEED_UPDATE];
+        [result setResult:RES_FAST_NEED_UPDATE];
         QUEUE_ASYNC_LOW(
                         //异步
                         [[[UpdateFastlaneProccessTool alloc]init] doWork];
-        );
+                        );
     }
     //结果包含明显的成功信息
-    else if ([oriResult containsString:@"fastlane.tools finished successfully"]) {
+    else if ([oriResult containsString:CON_FASTLANE_SUCCESS]) {
         [result setIsRunSucceed:true];
         [result setResultReason:SResultFastlaneReason_AllSuccess];
         [result setResult:ALL_SUCCESS];
     }
     
     //尽量只判断失败的情况,未发现异常关键字即成功
-    if ([oriResult containsString:@"503 Service Temporarily Unavailable"]) {
+    if ([oriResult containsString:CON_SERVER_503]) {
         [result setIsRunSucceed:FALSE];
         [result setResultReason:SResultFastlaneReason_FailToLogin];
-        [result setResult:SERVER_503];
+        [result setResult:RES_SERVER_503];
     }
-    else if ([oriResult containsString:@"invalid byte sequence in US-ASCII"]) {
+    else if ([oriResult containsString:CON_INVALID_BTYE]) {
         [result setIsRunSucceed:FALSE];
         [result setResultReason:SResultFastlaneReason_Unknown];
-        [result setResult:INVALID_BYTE];
+        [result setResult:RES_INVALID_BTYE];
     }
     else if ([oriResult containsString:CON_NO_APPLEID]) {
-        result.result=NO_APPLEID;
+        result.result=RES_NO_APPLEID;
         [result setResultReason:SResultFastlaneReason_Unknown];
         result.isRunSucceed=false;
     }
     else if ([oriResult containsString:CON_NO_PARA]) {
-        result.result=NO_PARA;
+        result.result=RES_NO_PARA;
         [result setResultReason:SResultFastlaneReason_Unknown];
         result.isRunSucceed=false;
     }
