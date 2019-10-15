@@ -38,7 +38,7 @@
         [result setResult:RES_FAST_NEED_UPDATE];
         QUEUE_ASYNC_LOW(
                         //异步
-                        [[[UpdateFastlaneProccessTool alloc]init] doWork];
+                        [[[UpdateFastlaneProccessTool alloc]init] doWorkWithExpPath:[FastlaneProccessTool sharedInstance].updateExpPath pwd:[FastlaneProccessTool sharedInstance].pwd];
                         );
     }
     //结果包含明显的成功信息

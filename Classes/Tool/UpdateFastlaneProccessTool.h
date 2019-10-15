@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface UpdateFastlaneProccessTool : FastlaneProccessTool
--(ProccessResult*)doWork;
+-(ProccessResult*)doWorkWithExpPath:(NSString*)toolPath pwd:(NSString*)pwd;
 @end
 
 NS_ASSUME_NONNULL_END

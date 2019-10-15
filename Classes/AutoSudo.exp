@@ -1,0 +1,19 @@
+#!/usr/bin/expect -f
+# set pass "123"
+set shellcontent [lindex $argv 0]
+set password [lindex $argv 1]
+set timeout 60
+
+spawn sh -c "${shellcontent}"
+# spawn sh /Users/sss/sjf/IOS/ipa_osx/git/rb/openssl.sh /Users/sss/sjf/IOS/ipa_osx/git/testkey coy_dis ios_distribution
+# send "$password\r"
+# interact
+expect {
+            "Password:" {send "${password}\r";}
+
+# ;exp_continue
+}
+
+send_user "expect proccess end\r"
+# exit
+expect eof

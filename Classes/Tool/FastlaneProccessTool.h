@@ -12,6 +12,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FastlaneProccessTool : ShellProccessTool
+@property(strong,nonatomic)NSString* pwd;
+@property(strong,nonatomic)NSString* updateExpPath;
+
++ (instancetype)sharedInstance;
++(void)setInstanceWithExpPath:(NSString*)expPath pwd:(NSString*)pwd;
+
 -(NSString*)doWork:(NSString*)content;
 @end
 

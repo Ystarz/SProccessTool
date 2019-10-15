@@ -45,9 +45,18 @@
     }
     return self;
 }
--(ProccessResult*)doWork{
+-(ProccessResult*)doWorkWithExpPath:(NSString*)toolPath pwd:(NSString*)pwd{
+    NSString *shellContent=[NSString stringWithFormat:@"%@",
+                       @"`sudo gem install fastlane`"];
     NSString *content=[NSString stringWithFormat:@"%@",
-                       @"sudo gem install fastlane"];
+                       @"PWD=$1;\
+                       TOOLPATH=$2;\
+                       SHELL='$3';\
+                       expect ${TOOLPATH} \"${SHELL}\" ${PWD}"];
+    
+    content=[content stringByReplacingOccurrencesOfString:@"$1" withString:pwd];
+    content=[content stringByReplacingOccurrencesOfString:@"$2" withString:toolPath];
+    content=[content stringByReplacingOccurrencesOfString:@"$3" withString:shellContent];
 //    OCLOGD(@"%@",content);
     NSLog(@"UpdateFastlaneProccessTool::content::%@",content);
     NSString*result= [self doWork:content];
