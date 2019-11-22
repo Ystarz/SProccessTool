@@ -16,12 +16,14 @@
 #define CON_NEED_UPDATE_1 @"sudo gem install fastlane"
 #define CON_SERVER_503 @"503 Service Temporarily Unavailable"
 #define CON_FASTLANE_SUCCESS @"fastlane.tools finished successfully"
+#define CON_LICENSE_NEED_UPDATE @"agree to the latest Program License Agreement in your developer account"
 
 #define RES_FAST_NEED_UPDATE @"fastlane need to update"
 #define RES_INVALID_BTYE @"invalid byte sequence in US-ASCII"
 #define RES_NO_APPLEID @"no apple id for fastlane"
 #define RES_NO_PARA @"no enough para for fastlane"
 #define RES_SERVER_503 @"server 503"
+#define RES_LICENSE_NEED_UPDATE @"need to login developer.apple.com to accept the updated agreement"
 
 @implementation FastlaneProccessResultHandler
 
@@ -58,6 +60,11 @@
         [result setIsRunSucceed:FALSE];
         [result setResultReason:SResultFastlaneReason_Unknown];
         [result setResult:RES_INVALID_BTYE];
+    }
+    else if ([oriResult containsString:CON_LICENSE_NEED_UPDATE]) {
+        [result setIsRunSucceed:FALSE];
+        [result setResultReason:SResultFastlaneReason_NeedUpdateLicense];
+        [result setResult:RES_LICENSE_NEED_UPDATE];
     }
     else if ([oriResult containsString:CON_NO_APPLEID]) {
         result.result=RES_NO_APPLEID;

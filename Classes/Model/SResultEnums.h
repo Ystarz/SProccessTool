@@ -28,6 +28,7 @@ typedef enum
     SResultFastlaneReason_NeedTwicePassword,//需要该appleid的二次验证码
     SResultFastlaneReason_FailToUpload,
     SResultFastlaneReason_FailToLogin,//登陆苹果账号超时,通常是503
+    SResultFastlaneReason_NeedUpdateLicense,//需要登录开发者网站同意新协议
 } SResultFastlaneReason;
 
 
